@@ -76,4 +76,4 @@ wanderlust/
 
 ## Author
 
-Built by Rishikesh, B.Sc. IT (Hons.) student at Ranchi University.
+Built by Rishikesh
