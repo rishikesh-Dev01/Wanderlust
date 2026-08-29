@@ -23,15 +23,7 @@ const reviewSchema = joi.object({
    }).required(),
 });
 
-const todoSchema = joi.object({
-   todo: joi.object({
-      title: joi.string().required().trim().max(200),
-      description: joi.string().allow("", null).max(1000),
-      priority: joi.string().valid('low', 'medium', 'high'),
-      dueDate: joi.date().allow("", null),
-      completed: joi.boolean(),
-   }).required(),
-});
+ 
 
  
-module.exports = {listingSchema, reviewSchema, todoSchema}
+module.exports = {listingSchema, reviewSchema, }

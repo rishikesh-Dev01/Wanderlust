@@ -109,3 +109,10 @@ body{
 .rishi{
     margin-left: 50rem !important;
 }
+
+/* Map */
+
+#map { 
+     height: 400px;
+     width: 85vh;
+}

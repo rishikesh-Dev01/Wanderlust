@@ -25,7 +25,11 @@ const saveRedirectUrl = (req, res, next) => {
 const isOwner = async(req, res, next) => {
     let {id} = req.params;
     let listing = await listingModel.findById(id);
-    if(!listing.owner.equals(res.locals.currUsers._id)){
+    if(!listing){
+        req.flash('error', 'Listing not found');
+        return res.redirect('/listings');
+    }
+    if(!res.locals.currUsers || !listing.owner.equals(res.locals.currUsers._id)){
         req.flash('error', "You are not owner of this liting ")
         return res.redirect(`/listings/${id}`)
     }
