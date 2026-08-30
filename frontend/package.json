@@ -1,0 +1,7 @@
+{
+  "name": "wanderlust-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Wanderlust - EJS templates, CSS and client JS",
+  "private": true,
+  "type": "commonjs"
+}

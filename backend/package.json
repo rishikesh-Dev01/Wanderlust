@@ -8,11 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run dev --prefix backend",
-    "dev:backend": "npm run dev --prefix backend",
-    "start": "node backend/server.js",
-    "start:backend": "node backend/server.js",
-    "init-db": "node backend/src/Init/index.js"
+    "dev": "npx nodemon server.js"
   },
   "keywords": [],
   "author": "",

@@ -32,28 +32,49 @@ Wanderlust is a full-stack web application (built using the **MERN** stack techn
 - **Authentication:** Passport.js (Local Strategy) / Session-based auth
 - **Voice Recognition:** Web Speech API (for voice-to-text review input)
 
-## Project Structure (Example)
+## Project Structure (Separated)
 
 ```
-wanderlust/
-├── models/
-│   ├── listing.js
-│   ├── review.js
-│   └── user.js
-├── routes/
-│   ├── listing.js
-│   ├── review.js
-│   └── user.js
-├── views/
-│   ├── listings/
-│   ├── users/
-│   └── layouts/
-├── public/
-│   ├── css/
-│   └── js/
-├── utils/
-├── app.js
-└── package.json
+Wanderlust/
+├── backend/               # All backend code
+│   ├── server.js          # Entry point
+│   ├── schema.js          # Joi validation
+│   ├── package.json
+│   ├── .env
+│   └── src/
+│       ├── app.js         # Express app (views -> ../frontend/views)
+│       ├── DB/db.js
+│       ├── cloudConfig.js
+│       ├── middleware.js
+│       ├── Controllers/
+│       ├── Models/
+│       ├── routers/
+│       ├── Utils/
+│       └── Init/
+├── frontend/              # All frontend code
+│   ├── views/
+│   │   ├── layouts/boilerplate.ejs
+│   │   ├── listings/ (index, show, new, edit)
+│   │   ├── Users/ (login, signup)
+│   │   ├── includes/ (navbar, footer, flash)
+│   │   └── error.ejs
+│   └── public/
+│       ├── css/ (style.css, rating.css)
+│       └── js/ (script.js, map.js)
+├── package.json           # Root proxy (npm run dev -> backend)
+└── readme.md
+```
+
+### Run Instructions
+```bash
+# From root
+npm run dev          # starts backend (nodemon backend/server.js) -> http://localhost:8080
+npm run init-db      # seed DB (node backend/src/Init/index.js)
+
+# Or from backend folder
+cd backend
+npm install
+npm run dev
 ```
 
 ## Core Functionalities Summary

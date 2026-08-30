@@ -1,4 +1,5 @@
 require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env') })
+require('dotenv').config({ path: require('path').resolve(__dirname, '../../../.env') }) // fallback to root .env
 const mongoose = require('mongoose')
 const initData = require('./data')
 const listingModel = require('../Models/listings.models')

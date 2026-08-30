@@ -19,11 +19,11 @@ const app = express();
 
 app.use(express.json());
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../../frontend/views'));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.engine('ejs', ejsMate);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../../frontend/public')));
 
 const store = MongoStore.create({
     mongoUrl: process.env.MONGO_URI,
